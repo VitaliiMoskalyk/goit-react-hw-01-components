@@ -1,5 +1,4 @@
 import Profile from './components/profile/profile';
-import Stats from './components/profile/stats';
 import user from './data/user.json';
 
 const App = () => {
@@ -10,11 +9,9 @@ const App = () => {
         username={user.username}
         tag={user.tag}
         location={user.location}
-      />
-      <Stats
         followers={user.stats.followers}
         views={user.stats.views}
-        likes={user.stats.views}
+        likes={user.stats.likes}
       />
     </div>
   );
