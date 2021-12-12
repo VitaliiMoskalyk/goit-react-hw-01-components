@@ -1,4 +1,5 @@
 import propTypes from 'prop-types';
+import s from './profile.module.css';
 
 const Profile = ({
   avatar,
@@ -9,23 +10,29 @@ const Profile = ({
   views,
   likes,
 }) => (
-  <div className="description">
-    <img src={avatar} alt="User avatar" className="avatar" />
-    <p className="name">{username}</p>
-    <p className="tag">@{tag}</p>
-    <p className="location">{location}</p>
-    <ul className="stats">
-      <li>
-        <span className="label">Followers</span>
-        <span className="quantity">{followers}</span>
+  <div className={s.description}>
+    <img src={avatar} alt="User avatar" className={s.avatar} />
+    <p className={s.name}>{username}</p>
+    <p className={s.tag}>@{tag}</p>
+    <p className={s.location}>{location}</p>
+    <ul>
+      <li className={s.stats}>
+        <span className={s.label}>Followers </span>
+        <span className={followers > 1500 ? s.quantity : s.quantityGreen}>
+          {followers}
+        </span>
       </li>
-      <li>
-        <span className="label">Views</span>
-        <span className="quantity">{views}</span>
+      <li className={s.stats}>
+        <span className={s.label}>Views</span>
+        <span className={views > 1500 ? s.quantity : s.quantityGreen}>
+          {views}
+        </span>
       </li>
-      <li>
-        <span className="label">Likes</span>
-        <span className="quantity">{likes}</span>
+      <li className={s.stats}>
+        <span className={s.label}>Likes</span>
+        <span className={likes > 1500 ? s.quantity : s.quantityGreen}>
+          {likes}
+        </span>
       </li>
     </ul>
   </div>
