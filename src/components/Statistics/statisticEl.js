@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 const Statistic = ({ label, percentage }) => (
   <>
     <span className="label">{label} </span>
-    <span className="percentage">{percentage} %</span>
+    <span style={{ fontWeight: 'bold' }}>{percentage} %</span>
   </>
 );
 
