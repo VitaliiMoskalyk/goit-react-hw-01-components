@@ -12,7 +12,7 @@ export default function FriendListItem({ avatar, name, isOnline }) {
         }
         width="15px"
         alt=""
-      ></img>
+      />
       <img className="avatar" src={avatar} alt="User avatar" width="48" />
       <p className="name">{name}</p>
     </li>

@@ -1,8 +1,8 @@
 import Profile from './components/profile/profile';
 import user from './data/user.json';
-import StatisticList from './components/statisticList';
+import StatisticList from './components/Statistics/statisticList';
 import data from './data/data.json';
-import FriendList from './components/FriendList';
+import FriendList from './components/FriendListItem/FriendList';
 import friends from './data/friends.json';
 import TableHistory from './components/TransactionHistory/TransactionHistory';
 import transactions from './data/transactions.json';
@@ -16,9 +16,7 @@ const App = () => {
           username={user.username}
           tag={user.tag}
           location={user.location}
-          followers={user.stats.followers}
-          views={user.stats.views}
-          likes={user.stats.likes}
+          stats={user.stats}
         />
       </section>
 

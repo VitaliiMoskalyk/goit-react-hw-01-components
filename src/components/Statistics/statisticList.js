@@ -1,17 +1,6 @@
 import propTypes from 'prop-types';
-import Statistic from './Statistics/statisticEl';
-import s from './Statistics/statistic.module.css';
-
-const colors = [
-  '#00FF7F',
-  '#FF1493',
-  '#FFD700',
-  '#FF00FF',
-  '#8A2BE2',
-  '#0000CD',
-  '#DAA520',
-  '	#D2691E',
-];
+import Statistic from './statisticEl';
+import s from './statistic.module.css';
 
 const StatisticList = ({ stats, title }) => {
   return (
@@ -20,16 +9,12 @@ const StatisticList = ({ stats, title }) => {
 
       <ul className={s.statList}>
         {stats.map(({ id, label, percentage }) => (
-          <li
-            className={s.item}
-            style={{
-              backgroundColor:
-                colors[Math.floor(Math.random() * colors.length)],
-            }}
+          <Statistic
+            label={label}
+            percentage={percentage}
             key={id}
-          >
-            <Statistic label={label} percentage={percentage}></Statistic>
-          </li>
+            className={s.item}
+          />
         ))}
       </ul>
     </div>

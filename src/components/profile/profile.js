@@ -1,15 +1,7 @@
 import propTypes from 'prop-types';
 import s from './profile.module.css';
 
-const Profile = ({
-  avatar,
-  username,
-  tag,
-  location,
-  followers,
-  views,
-  likes,
-}) => (
+const Profile = ({ avatar, username, tag, location, stats }) => (
   <div className={s.description}>
     <img src={avatar} alt="User avatar" className={s.avatar} />
     <p className={s.name}>{username}</p>
@@ -18,20 +10,20 @@ const Profile = ({
     <ul>
       <li className={s.stats}>
         <span className={s.label}>Followers </span>
-        <span className={followers > 1500 ? s.quantity : s.quantityGreen}>
-          {followers}
+        <span className={stats.followers > 1500 ? s.quantity : s.quantityGreen}>
+          {stats.followers}
         </span>
       </li>
       <li className={s.stats}>
         <span className={s.label}>Views</span>
-        <span className={views > 1500 ? s.quantity : s.quantityGreen}>
-          {views}
+        <span className={stats.views > 1500 ? s.quantity : s.quantityGreen}>
+          {stats.views}
         </span>
       </li>
       <li className={s.stats}>
         <span className={s.label}>Likes</span>
-        <span className={likes > 1500 ? s.quantity : s.quantityGreen}>
-          {likes}
+        <span className={stats.likes > 1500 ? s.quantity : s.quantityGreen}>
+          {stats.likes}
         </span>
       </li>
     </ul>
@@ -43,9 +35,7 @@ Profile.propTypes = {
   tag: propTypes.string.isRequired,
   location: propTypes.string.isRequired,
   avatar: propTypes.string.isRequired,
-  followers: propTypes.number.isRequired,
-  views: propTypes.number.isRequired,
-  likes: propTypes.number.isRequired,
+  stats: propTypes.objectOf(propTypes.number),
 };
 
 export default Profile;

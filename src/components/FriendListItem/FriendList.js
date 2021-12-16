@@ -1,5 +1,5 @@
 import propTypes from 'prop-types';
-import FriendListItem from './FriendListItem/FriendListItem';
+import FriendListItem from './FriendListItem';
 
 export default function FriendList({ friends }) {
   return (
@@ -10,7 +10,7 @@ export default function FriendList({ friends }) {
           avatar={friend.avatar}
           name={friend.name}
           isOnline={friend.isOnline}
-        ></FriendListItem>
+        />
       ))}
     </ul>
   );
